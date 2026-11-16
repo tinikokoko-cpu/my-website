@@ -3,51 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>実験観察記録 - 1ページ目</title>
+    <title>実験対象 詳細データ</title>
     <style>
-        /* ページ全体の基本的な見栄えを整える設定 */
         body {
             font-family: sans-serif;
             line-height: 1.6;
-            max-width: 800px; /* パソコンで見たときに横幅が広がりすぎないようにする */
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             color: #333;
         }
-        .report-header {
+        h1 {
             border-bottom: 2px solid #ccc;
-            margin-bottom: 20px;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
-        .meta-info {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        .meta-info p {
-            margin: 5px 0;
-        }
-        .images {
+        
+        /* 写真と表を横並びにする設定 */
+        .data-section {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap; /* 画面が狭いときは画像を折り返す */
-            margin-top: 10px;
+            gap: 20px;
+            margin-bottom: 40px;
+            align-items: flex-start;
         }
-        .images img {
+        .data-photo {
+            flex: 0 0 40%; /* 写真のスペースを全体の40%にする */
+            max-width: 350px;
+        }
+        .data-photo img {
             width: 100%;
-            max-width: 240px;
             height: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
-        /* 下部のページ移動リンク（1/2/3/4/5）のデザイン */
+        .data-table {
+            flex: 1; /* 残りのスペースを表に割り当てる */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            width: 30%;
+        }
+
+        /* 備考欄のデザイン */
+        .remarks-section {
+            background-color: #f9f9f9;
+            border-left: 5px solid #0056b3;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+        .remarks-section h3 {
+            margin-top: 0;
+        }
+
+        /* ページ切り替えリンクのデザイン */
         .pagination {
             display: flex;
             justify-content: center;
             gap: 10px;
-            margin-top: 50px;
+            margin-top: 60px;
             padding-top: 20px;
             border-top: 1px solid #ccc;
+            flex-wrap: wrap;
         }
         .pagination a {
             display: inline-block;
@@ -60,52 +86,114 @@
         .pagination a:hover {
             background-color: #ddd;
         }
-        /* 現在見ているページのボタンだけ色を変える */
         .pagination a.current {
             background-color: #0056b3;
             color: white;
             font-weight: bold;
         }
+
+        /* スマホ用設定（画面が狭いときは縦並びにする） */
+        @media (max-width: 600px) {
+            .data-section {
+                flex-direction: column;
+            }
+            .data-photo {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="report-header">
-        <h1>実験観察記録</h1>
-        <h2>実験内容：○○の成長と変化について</h2>
-    </div>
+    <h1>実験対象 詳細データ</h1>
 
-    <!-- 記録データ部分 -->
-    <div class="meta-info">
-        <p><strong>経過日数：</strong> 1日目</p>
-        <p><strong>観察日：</strong> 2026年11月16日</p>
-        <p><strong>環境条件：</strong> 晴れ / 室温20℃</p>
-    </div>
-
-    <!-- 本文部分 -->
-    <div class="details">
-        <h3>実験内容の詳細</h3>
-        <p>ここに実験の前提条件や、どのような手順で観察を行っているかを記載します。（例：毎日同じ時間に観察する、特定の薬品を添加するなど）</p>
-
-        <h3>観察結果・気づいたこと</h3>
-        <p>本日の状態や、前回と比べて変化した点などを記載します。</p>
-    </div>
-
-    <!-- 画像部分 -->
-    <div class="gallery">
-        <h3>報告用画像</h3>
-        <div class="images">
-            <!-- 実際に表示させたい画像のファイル名に変更してください -->
-            <img src="photo1.jpg" alt="観察画像1">
-            <img src="photo2.jpg" alt="観察画像2">
-            <img src="photo3.jpg" alt="観察画像3">
+    <!-- 1段目 -->
+    <div class="data-section">
+        <div class="data-photo">
+            <img src="subject1.jpg" alt="対象の全体写真">
+        </div>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>項目名</th>
+                        <td>全体像の記録</td>
+                    </tr>
+                    <tr>
+                        <th>採取日</th>
+                        <td>2026年11月10日</td>
+                    </tr>
+                    <tr>
+                        <th>特徴・説明</th>
+                        <td>ここに写真に対する詳しい説明や、対象の初期状態のデータを記載します。文章が長くなっても表の中で自動的に折り返されます。</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- ページ切り替えリンク（1 2 3 4 5） -->
+    <!-- 2段目 -->
+    <div class="data-section">
+        <div class="data-photo">
+            <img src="subject2.jpg" alt="対象の拡大写真">
+        </div>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>項目名</th>
+                        <td>局所・拡大記録</td>
+                    </tr>
+                    <tr>
+                        <th>部位</th>
+                        <td>葉の表面</td>
+                    </tr>
+                    <tr>
+                        <th>特徴・説明</th>
+                        <td>2つ目の写真に関する説明を記載します。表の行（tr）は必要に応じて増やしたり減らしたりできます。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 3段目 -->
+    <div class="data-section">
+        <div class="data-photo">
+            <img src="subject3.jpg" alt="比較対象の写真">
+        </div>
+        <div class="data-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>項目名</th>
+                        <td>比較用データ</td>
+                    </tr>
+                    <tr>
+                        <th>条件</th>
+                        <td>対照群（通常環境）</td>
+                    </tr>
+                    <tr>
+                        <th>特徴・説明</th>
+                        <td>3つ目の写真に関する説明です。必要項目に合わせて表の左側（th）のテキストを変更してください。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 備考スペース -->
+    <div class="remarks-section">
+        <h3>備考・注意事項</h3>
+        <p>ここには、実験全体の前提条件、イレギュラーな事態、保管方法など、特筆すべき事項を自由に記載できます。<br>
+        改行タグ（&lt;br&gt;）を使えば、このように段落内で改行することも可能です。</p>
+    </div>
+
+    <!-- ページ切り替えリンク -->
     <div class="pagination">
-        <!-- 現在のページには class="current" を付けます -->
-        <a href="index.html" class="current">1</a>
+        <a href="index.html" class="current">詳細データ</a>
+        <a href="page1.html">1</a>
         <a href="page2.html">2</a>
         <a href="page3.html">3</a>
         <a href="page4.html">4</a>
