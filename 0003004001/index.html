@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>実験対象 詳細データ</title>
     <style>
+        /* 背景黒・文字白のベース設定 */
         body {
-            font-family: sans-serif;
+            font-family: "Courier New", Consolas, monospace, sans-serif;
             line-height: 1.6;
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            color: #333;
+            background-color: #000000;
+            color: #ffffff;
         }
         h1 {
-            border-bottom: 2px solid #ccc;
+            border-bottom: 1px solid #ffffff;
             padding-bottom: 10px;
             margin-bottom: 30px;
+            font-weight: normal;
+            font-size: 1.8em;
         }
         
-        /* 写真と表を横並びにする設定 */
+        /* 写真と表のレイアウト */
         .data-section {
             display: flex;
             gap: 20px;
@@ -27,72 +31,77 @@
             align-items: flex-start;
         }
         .data-photo {
-            flex: 0 0 40%; /* 写真のスペースを全体の40%にする */
+            flex: 0 0 40%;
             max-width: 350px;
         }
         .data-photo img {
             width: 100%;
             height: auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #ffffff;
+            display: block; /* 余白を消す */
         }
         .data-table {
-            flex: 1; /* 残りのスペースを表に割り当てる */
+            flex: 1;
         }
+        
+        /* 装飾を削ぎ落とした無骨な表 */
         table {
             width: 100%;
             border-collapse: collapse;
         }
         th, td {
-            border: 1px solid #ccc;
+            border: 1px solid #ffffff;
             padding: 12px;
             text-align: left;
         }
         th {
-            background-color: #f4f4f4;
+            background-color: #1a1a1a;
             width: 30%;
+            font-weight: normal;
         }
 
-        /* 備考欄のデザイン */
+        /* 備考欄（シンプルな枠線のみ） */
         .remarks-section {
-            background-color: #f9f9f9;
-            border-left: 5px solid #0056b3;
+            border: 1px solid #ffffff;
             padding: 20px;
             margin-top: 40px;
-            border-radius: 4px;
         }
         .remarks-section h3 {
             margin-top: 0;
+            border-bottom: 1px dashed #ffffff;
+            display: inline-block;
+            padding-bottom: 5px;
+            font-weight: normal;
         }
 
-        /* ページ切り替えリンクのデザイン */
+        /* ページ切り替えリンク */
         .pagination {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             margin-top: 60px;
             padding-top: 20px;
-            border-top: 1px solid #ccc;
+            border-top: 1px solid #555555;
             flex-wrap: wrap;
         }
         .pagination a {
             display: inline-block;
             padding: 8px 16px;
             text-decoration: none;
-            background-color: #f1f1f1;
-            color: #333;
-            border-radius: 4px;
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #ffffff;
         }
         .pagination a:hover {
-            background-color: #ddd;
+            background-color: #333333;
         }
+        /* 現在のページは白黒反転 */
         .pagination a.current {
-            background-color: #0056b3;
-            color: white;
-            font-weight: bold;
+            background-color: #ffffff;
+            color: #000000;
         }
 
-        /* スマホ用設定（画面が狭いときは縦並びにする） */
+        /* スマホ用設定 */
         @media (max-width: 600px) {
             .data-section {
                 flex-direction: column;
