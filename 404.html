@@ -1,1 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 該当データなし</title>
+    <style>
+        /* 背景黒・文字白のベース設定 */
+        body {
+            font-family: "Courier New", Consolas, monospace, sans-serif;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 100px auto; /* 画面の中央付近に表示されるように調整 */
+            padding: 20px;
+            background-color: #000000;
+            color: #ffffff;
+            text-align: center;
+        }
+        .error-code {
+            font-size: 3em;
+            border-bottom: 1px solid #ffffff;
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .error-message {
+            margin-bottom: 40px;
+        }
+        /* 戻るボタンのデザイン */
+        a.back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+        }
+        a.back-link:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="error-code">404 NOT FOUND</div>
+    
+    <div class="error-message">
+        <p>指定された記録データは存在しないか、<br>アクセス権限がありません。</p>
+    </div>
+
+    <!-- サイトのトップ（kivotos-student-data.com）に戻るリンク -->
+    <a href="/" class="back-link">＞ メインディレクトリへ戻る</a>
+
+</body>
+</html>
