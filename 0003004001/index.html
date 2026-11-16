@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>基本データ：0003004001</title>
     <style>
-        /* 背景黒・文字白のベース設定 */
+        /* ベース設定 */
         body {
             font-family: "Courier New", Consolas, monospace, sans-serif;
             line-height: 1.6;
@@ -44,7 +44,7 @@
             flex: 1;
         }
         
-        /* 装飾を削ぎ落とした無骨な表 */
+        /* 写真の横の表 */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -60,7 +60,7 @@
             font-weight: normal;
         }
 
-        /* 備考欄（シンプルな枠線のみ） */
+        /* 下の方の備考欄*/
         .remarks-section {
             border: 1px solid #ffffff;
             padding: 20px;
@@ -74,7 +74,7 @@
             font-weight: normal;
         }
 
-        /* ページ切り替えリンク */
+        /* リンク */
         .pagination {
             display: flex;
             justify-content: center;
@@ -96,10 +96,7 @@
             background-color: #333333;
         }
         /* 現在のページは白黒反転 */
-        .pagination a.current {
-            background-color: #ffffff;
-            color: #000000;
-        }
+
 
         /* スマホ用設定 */
         @media (max-width: 600px) {
