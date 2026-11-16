@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>実験観察記録 - 1ページ目</title>
+    <style>
+        /* ページ全体の基本的な見栄えを整える設定 */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            max-width: 800px; /* パソコンで見たときに横幅が広がりすぎないようにする */
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .report-header {
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .meta-info {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .meta-info p {
+            margin: 5px 0;
+        }
+        .images {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap; /* 画面が狭いときは画像を折り返す */
+            margin-top: 10px;
+        }
+        .images img {
+            width: 100%;
+            max-width: 240px;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        /* 下部のページ移動リンク（1/2/3/4/5）のデザイン */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            background-color: #f1f1f1;
+            color: #333;
+            border-radius: 4px;
+        }
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+        /* 現在見ているページのボタンだけ色を変える */
+        .pagination a.current {
+            background-color: #0056b3;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-header">
+        <h1>実験観察記録</h1>
+        <h2>実験内容：○○の成長と変化について</h2>
+    </div>
+
+    <!-- 記録データ部分 -->
+    <div class="meta-info">
+        <p><strong>経過日数：</strong> 1日目</p>
+        <p><strong>観察日：</strong> 2026年11月16日</p>
+        <p><strong>環境条件：</strong> 晴れ / 室温20℃</p>
+    </div>
+
+    <!-- 本文部分 -->
+    <div class="details">
+        <h3>実験内容の詳細</h3>
+        <p>ここに実験の前提条件や、どのような手順で観察を行っているかを記載します。（例：毎日同じ時間に観察する、特定の薬品を添加するなど）</p>
+
+        <h3>観察結果・気づいたこと</h3>
+        <p>本日の状態や、前回と比べて変化した点などを記載します。</p>
+    </div>
+
+    <!-- 画像部分 -->
+    <div class="gallery">
+        <h3>報告用画像</h3>
+        <div class="images">
+            <!-- 実際に表示させたい画像のファイル名に変更してください -->
+            <img src="photo1.jpg" alt="観察画像1">
+            <img src="photo2.jpg" alt="観察画像2">
+            <img src="photo3.jpg" alt="観察画像3">
+        </div>
+    </div>
+
+    <!-- ページ切り替えリンク（1 2 3 4 5） -->
+    <div class="pagination">
+        <!-- 現在のページには class="current" を付けます -->
+        <a href="page1.html" class="current">1</a>
+        <a href="page2.html">2</a>
+        <a href="page3.html">3</a>
+        <a href="page4.html">4</a>
+        <a href="page5.html">5</a>
+    </div>
+
+</body>
+</html>
 
